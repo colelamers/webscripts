@@ -15,10 +15,10 @@ for file in "$INPUT_DIR"/*; do
     # Read the contents of the file
     fileContents=$(<"$file")
 
-    # Step 1: Escape single quotes ' by replacing them with two single quotes ''
+    # Escape single quotes ' by replacing them with two single quotes ''
     sanitizedFileContents=$(echo "$fileContents" | sed "s/'/''/g")
 
-    # Step 3: Append the SQL command
+    # Append the SQL command
     COMMANDS+="UPDATE blogs SET html = '$sanitizedFileContents' WHERE title = '$fileNameWithoutExtension'; "
 done
 

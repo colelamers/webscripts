@@ -28,7 +28,7 @@ fi
 # Start Angular in the background
 cd ~/Desktop/colelamersdotcom/frontend || { echo "Failed to change to frontend directory"; exit 1; }
 echo "Starting Angular..."
-ng serve --port 4000 &
+ng serve --open --port 4000 &
 NG_PID=$!
 if [ $? -ne 0 ]; then
   echo "Failed to start Angular"
